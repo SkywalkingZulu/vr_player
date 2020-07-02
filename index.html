@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <title>videojs-vr Demo</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.4.1/dist/video-js.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-vr@1.5.0/dist/videojs-vr.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/video.js@7.4.1/dist/video-js.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/videojs-vr@1.5.0/dist/videojs-vr.css"
+        crossorigin="anonymous">
 </head>
 
 <body style="margin: 0;">
@@ -13,8 +14,8 @@
         playsinline>
         <source id="video_player_source">
     </video>
-    <script src="https://cdn.jsdelivr.net/npm/video.js@7.4.1/dist/video.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/videojs-vr@1.5.0/dist/videojs-vr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/video.js@7.4.1/dist/video.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-vr@1.5.0/dist/videojs-vr.js" crossorigin="anonymous"></script>
     <script>
         const _video_player_source = document.querySelector('#video_player_source');
 
@@ -43,7 +44,7 @@
         }
         setVideo(
             "https://video.felixsmart.com:9443/vod/_definst_/mp4:40A36BC38F2D/40A36BC38F2D1593103010597/playlist.m3u8?token=16eaa183-d548-475c-ad07-7b1c61e31dde"
-            );
+        );
         playVideo();
     </script>
 </body>
