@@ -25,7 +25,20 @@
         }
 
         function playVideo(url) {
-            var player = window.player = videojs('videojs-vr-player');
+            var player = window.player = videojs('videojs-vr-player', {
+                autoplay: false,
+                controls: true,
+                width: '100%',
+                preload: "auto",
+                poster: "images/m.jpg",
+                aspectRatio: "16:9",
+                crossOrigin: "anonymous",
+                html5: {
+                    hls: {
+                        withCredentials: true
+                    }
+                }
+            });
             player.mediainfo = player.mediainfo || {};
             player.mediainfo.projection = '360';
 
