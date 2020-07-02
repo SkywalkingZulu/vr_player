@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>videojs-vr Demo</title>
+    <link href="./node_modules/video.js/dist/video-js.min.css" rel="stylesheet">
+    <link href="./node_modules/videojs-vr/dist/videojs-vr.css" rel="stylesheet">
+</head>
+
+<body style="margin: 0;">
+    <video style="height: 100vh; width: 100vw" id="videojs-vr-player" class="video-js vjs-default-skin" controls
+        playsinline>
+        <source id="video_player_source">
+    </video>
+    <script src="./node_modules/video.js/dist/video.min.js"></script>
+    <script src="./node_modules/videojs-vr/dist/videojs-vr.min.js"></script>
+    <script>
+        const _video_player_source = document.querySelector('#video_player_source');
+
+        function setVideo(url) {
+            _video_player_source.setAttribute('src', url);
+            _video_player_source.setAttribute('type', 'application/x-mpegURL');
+        }
+
+        function playVideo(url) {
+            var player = window.player = videojs('videojs-vr-player');
+            player.mediainfo = player.mediainfo || {};
+            player.mediainfo.projection = '360';
+
+            var vr = window.vr = player.vr({
+                projection: '360',
+                debug: true,
+                forceCardboard: false
+            });
+            player.play();
+        }
+
+        function resetVideo() {
+            window.player.stop();
+            window.player = null;
+            window.vr = null;
+        }
+    </script>
+</body>
+
+</html>
